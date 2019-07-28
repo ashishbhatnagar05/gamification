@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * This class links a Badge to a User. Contains also a timestamp with the moment in which the user got it.
@@ -21,7 +18,7 @@ import javax.persistence.Id;
 public final class BadgeCard {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "BADGE_ID")
     private final Long badgeId;
 
