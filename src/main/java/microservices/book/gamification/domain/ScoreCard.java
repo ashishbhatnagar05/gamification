@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * This class represents the Score linked to an attempt in the game,
@@ -23,7 +26,7 @@ public final class ScoreCard {
     public static final int DEFAULT_SCORE = 10;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "CARD_ID")
     private final Long cardId;
 
